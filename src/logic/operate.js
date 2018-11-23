@@ -1,5 +1,6 @@
 import Big from "big.js";
 
+// defining what the operations do as the buttons 
 export default function operate(numberOne, numberTwo, operation) {
   const one = Big(numberOne || "0");
   const two = Big(numberTwo || "0");

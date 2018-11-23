@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import "./Display.css";
 
+// displaying the prop values 
 class Display extends React.Component {
   render() {
     return (
@@ -12,6 +13,8 @@ class Display extends React.Component {
     );
   }
 }
+
+// putting the values into strings 
 Display.propTypes = {
   value: PropTypes.string,
 };

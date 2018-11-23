@@ -7,6 +7,7 @@ class Button extends React.Component {
     this.props.clickHandler(this.props.name);
   };
 
+  //setting the colour state of the buttons 
   render() {
     const className = [
       "component-button",
@@ -21,10 +22,11 @@ class Button extends React.Component {
     );
   }
 }
+
+//defining the types of the properties 
 Button.propTypes = {
   name: PropTypes.string,
   orange: PropTypes.bool,
   wide: PropTypes.bool,
-  clickHandler: PropTypes.func,
 };
 export default Button;

@@ -44,7 +44,10 @@ export default function calculate(obj, buttonName) {
       total: null,
     };
   }
+
 // putting value into percentage 
+// Big allowing for a limited amount of decimal points 
+// will turn a total calculation into a percentage as well as just one number typed having no interaction with another number or operation
   if (buttonName === "%") {
     if (obj.operation && obj.next) {
       const result = operate(obj.total, obj.next, obj.operation);
@@ -66,6 +69,7 @@ export default function calculate(obj, buttonName) {
     return {};
   }
 
+  // allows for a "." to be ignored if one number already includes a decimal 
   if (buttonName === ".") {
     if (obj.next) {
       // ignore a . if the next number already has one
@@ -77,6 +81,7 @@ export default function calculate(obj, buttonName) {
     return { next: "0." };
   }
 
+ // if two numbers are present with an operation, total will equal the operation 
   if (buttonName === "=") {
     if (obj.next && obj.operation) {
       return {
@@ -90,6 +95,7 @@ export default function calculate(obj, buttonName) {
     }
   }
 
+  // making the number negative or positive by multiplying it by -1 
   if (buttonName === "+/-") {
     if (obj.next) {
       return { next: (-1 * parseFloat(obj.next)).toString() };
@@ -100,15 +106,7 @@ export default function calculate(obj, buttonName) {
     return {};
   }
 
-  // Button must be an operation
-
-  // When the user presses an operation button without having entered
-  // a number first, do nothing.
-  // if (!obj.next && !obj.total) {
-  //   return {};
-  // }
-
-  // User pressed an operation button and there is an existing operation
+  // User pressed an operation button and there is an existing operation, update the existing operation to the new one 
   if (obj.operation) {
     return {
       total: operate(obj.total, obj.next, obj.operation),
@@ -116,8 +114,6 @@ export default function calculate(obj, buttonName) {
       operation: buttonName,
     };
   }
-
-  // no operation yet, but the user typed one
 
   // The user hasn't typed a number yet, just save the operation
   if (!obj.next) {

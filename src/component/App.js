@@ -4,6 +4,7 @@ import ButtonPanel from "./ButtonPanel";
 import calculate from "../logic/calculate";
 import "./App.css";
 
+//starting off the states of the variables as null
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -14,10 +15,12 @@ class App extends React.Component {
     };
   }
 
+  // 
   handleClick = buttonName => {
     this.setState(calculate(this.state, buttonName));
   };
 
+  //display values of 0 and handle clicks 
   render() {
     return (
       <div className="component-app">

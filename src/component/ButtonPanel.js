@@ -9,6 +9,7 @@ class ButtonPanel extends React.Component {
     this.props.clickHandler(buttonName);
   };
 
+  // adding the clicks to the various buttons on the calculator and divided into the different rows 
   render() {
     return (
       <div className="component-button-panel">
@@ -45,7 +46,7 @@ class ButtonPanel extends React.Component {
     );
   }
 }
-ButtonPanel.propTypes = {
-  clickHandler: PropTypes.func,
-};
+// ButtonPanel.propTypes = {
+//   clickHandler: PropTypes.func,
+// };
 export default ButtonPanel;
