@@ -72,7 +72,6 @@ export default function calculate(obj, buttonName) {
   // allows for a "." to be ignored if one number already includes a decimal 
   if (buttonName === ".") {
     if (obj.next) {
-      // ignore a . if the next number already has one
       if (obj.next.includes(".")) {
         return {};
       }

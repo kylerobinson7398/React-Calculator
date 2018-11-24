@@ -15,12 +15,12 @@ class App extends React.Component {
     };
   }
 
-  // 
+  // handle click and set state to calculate the values entered 
   handleClick = buttonName => {
     this.setState(calculate(this.state, buttonName));
   };
 
-  //display values of 0 and handle clicks 
+  //display values of 0 and conncet click handler to the button panel
   render() {
     return (
       <div className="component-app">
