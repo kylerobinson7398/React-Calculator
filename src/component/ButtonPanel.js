@@ -1,7 +1,5 @@
 import Button from "./Button";
 import React from "react";
-import PropTypes from "prop-types";
-
 import "./ButtonPanel.css";
 
 class ButtonPanel extends React.Component {
